@@ -1,7 +1,11 @@
 function filter = getGaussianFilter( filterLength, sigma )
 %生成（对称的）高斯滤波器的矩阵，输入参数为滤波器的边长（奇数）filterLength和标准差sigma
 
-filter = zeros(filterLength);         %初始化
+% if mod(filterLength, 2) == 0
+%     filterLength = filterLength + 1;
+% end
+
+filter = zeros(filterLength);               %初始化
 step = 1 / filterLength;                    %设置步长
 originOffset = ceil(filterLength / 2);      %中心点坐标偏移
 for i = 0 : originOffset - 1

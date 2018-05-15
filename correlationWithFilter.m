@@ -3,7 +3,7 @@ function outputPic = correlationWithFilter( imgMatrix, filter )
 %·½·¨£ºÈç¹ûÎªRGBÍ¼Ïñ£¬·Ö±ð¶ÔÃ¿¸öÍ¨µÀ½øÐÐÂË²¨²Ù×÷¡£±ßÔµ´¦²ÉÓÃ²Ã¼ô¶ø²»padding
 %ÎÊÌâ£ºÓÐµãÂý
 
-[rows, columns, nDimension] = size(imgMatrix);
+[rows, columns, nDimension] = size(imgMatrix);                  %¶ÁÈ¡Í¼Ïñ³¤¿íºÍÍ¨µÀÊý
 filterLength = size(filter, 1);                                 %Ä¬ÈÏ·½ÐÎÂË²¨Æ÷
 floorHalfLength = floor(filterLength / 2);
 ceilHalfLength = ceil(filterLength / 2);
@@ -13,13 +13,16 @@ outputPic = zeros(rows, columns, nDimension);                   %Ô¤·ÖÅä¿Õ¼ä£¬²Ù×
 for d = 1 : nDimension
     for r = ceilHalfLength : rows - floorHalfLength
         for c = ceilHalfLength : columns - floorHalfLength
-            tempMatrix = double(imgMatrix(r - floorHalfLength : r + floorHalfLength, c - floorHalfLength : c + floorHalfLength, d)) .* filter;
+            originMatrix = imgMatrix(r - floorHalfLength : r + floorHalfLength, c - floorHalfLength : c + floorHalfLength, d);
+            tempMatrix = double(originMatrix) .* filter;
             outputPic(r, c, d) = sum(tempMatrix(:));
         end
     end
 end
 
+%²Ã¼ô
 outputPic = outputPic(ceilHalfLength : rows - floorHalfLength, ceilHalfLength : columns - floorHalfLength, :);
+%×ª»»Îªuint8²ÅÄÜÕý³£ÏÔÊ¾
 outputPic = uint8(outputPic);
 
 end
