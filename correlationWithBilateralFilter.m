@@ -32,7 +32,7 @@ for d = 1 : nDimension
             spatialKernelFunction(spatialKernelFunction < 50) = 1;
             spatialKernelFunction(spatialKernelFunction ~= 1) = 0;
             
-            BFilter = spatialKernelFunction * GFilter;
+            BFilter = spatialKernelFunction .* GFilter;
             
             %¹éÒ»»¯
             k = sum(BFilter(:));

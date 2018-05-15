@@ -3,7 +3,7 @@ clc;
 
 GFilter = getGaussianFilter( 21, 0.15 );
 
-imgMatrix = imread('TP2gray1per.png');
+imgMatrix = imread('TP2gray10per.png');
 outputPicBF = correlationWithBilateralFilter( imgMatrix, GFilter );
 outputPicGF = correlationWithFilter( imgMatrix, GFilter );
 
