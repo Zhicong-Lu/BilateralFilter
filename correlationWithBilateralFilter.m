@@ -30,7 +30,8 @@ for d = 1 : nDimension
 
             %threshold
             spatialKernelFunction = abs(originMatrix - centerPointValue);
-            spatialKernelFunction(spatialKernelFunction < 50) = 1;                  %此处设置阈值，可能可以作为函数参数
+            %此处设置阈值，可能可以作为函数参数或者用自适应的方法确定
+            spatialKernelFunction(spatialKernelFunction < 50) = 1;
             spatialKernelFunction(spatialKernelFunction ~= 1) = 0;
             
             BFilter = spatialKernelFunction .* GFilter;
