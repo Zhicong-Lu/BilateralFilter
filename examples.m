@@ -13,18 +13,18 @@ imgMatrix1 = imread('.\data\TP2gray10per.png');                         %¶ÁÈ¡Í¼Ï
 outputPicBF1 = correlationWithBilateralFilter( imgMatrix1, GFilter1 );  %Ó¦ÓÃË«±ßÂË²¨
 outputPicGF1 = correlationWithFilter( imgMatrix1, GFilter1 );           %Ó¦ÓÃ¸ßË¹ÂË²¨
 
-figure('Name','ºÏ³ÉÍ¼Ïñ');                              %ÐÂ´°¿Ú
-set(gcf,'outerposition',get(0,'screensize'));           %×î´ó»¯
-subplot(1, 3, 1);                                       %×ÓÍ¼
-imshow(imgMatrix1);                                     %ÏÔÊ¾
-title('Ô­Í¼');                                          %±êÌâ
+figure('Name','ºÏ³ÉÍ¼Ïñ£¨»Ò¶ÈÍ¼£©');                                     %ÐÂ´°¿Ú
+set(gcf,'outerposition',get(0,'screensize'));                           %×î´ó»¯
+subplot(1, 3, 1);                                                       %×ÓÍ¼
+imshow(imgMatrix1);                                                     %ÏÔÊ¾
+title('Ô­Í¼');                                                          %±êÌâ
 subplot(1, 3, 2);
 imshow(outputPicBF1);
 title('Ë«±ßÂË²¨Æ÷');
 subplot(1, 3, 3);
 imshow(outputPicGF1);
 title('¸ßË¹ÂË²¨Æ÷');
-figure('Name','ºÏ³ÉÍ¼Ïñ');
+figure('Name','ºÏ³ÉÍ¼Ïñ£¨»Ò¶ÈÍ¼£©');
 set(gcf,'outerposition',get(0,'screensize'));
 subplot(1, 3, 1);
 mesh(imgMatrix1);
@@ -43,7 +43,7 @@ imgMatrix2 = imread('.\data\rice6per.png');
 outputPicBF2 = correlationWithBilateralFilter( imgMatrix2, GFilter2 );
 outputPicGF2 = correlationWithFilter( imgMatrix2, GFilter2 );
 
-figure('Name','rice');
+figure('Name','rice£¨»Ò¶ÈÍ¼£©');
 set(gcf,'outerposition',get(0,'screensize'));
 subplot(1, 3, 1);
 imshow(imgMatrix2);
@@ -62,7 +62,7 @@ imgMatrix3 = imread('.\data\cameraman6per.tif');
 outputPicBF3 = correlationWithBilateralFilter( imgMatrix3, GFilter3 );
 outputPicGF3 = correlationWithFilter( imgMatrix3, GFilter3 );
 
-figure('Name','Cameraman');
+figure('Name','Cameraman£¨»Ò¶ÈÍ¼£©');
 set(gcf,'outerposition',get(0,'screensize'));
 subplot(1, 3, 1);
 imshow(imgMatrix3);
@@ -81,7 +81,7 @@ imgMatrix4 = imread('.\data\lena5perG.jpg');
 outputPicBF4 = correlationWithBilateralFilter( imgMatrix4, GFilter4 );
 outputPicGF4 = correlationWithFilter( imgMatrix4, GFilter4 );
 
-figure('Name','Lena');
+figure('Name','Lena£¨RGBÍ¼Ïñ£©');
 set(gcf,'outerposition',get(0,'screensize'));
 subplot(1, 3, 1);
 imshow(imgMatrix4);
